@@ -38,12 +38,18 @@ public abstract class ConsoleProgram {
 
     public abstract void executeAction(int choice);
 
-    public int readInt(String prompt) {
+   
+       
+        public int readInt(String prompt) {
+            System.out.print(prompt);
+            return keyboard.nextInt();
+        }
 
-        System.out.print(prompt);
+        public String readString(String prompt) {
+            System.out.print(prompt);
+            return keyboard.next();
+        }
 
-        return keyboard.nextInt();
-    }
 
     public void startProgram() {
 

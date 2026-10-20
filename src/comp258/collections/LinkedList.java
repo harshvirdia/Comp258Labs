@@ -129,7 +129,7 @@ public class LinkedList {
     }
 
     // Print all items
-    public void print() {
+        public void print() {
 
         ListNode temp = items;
 
@@ -142,5 +142,51 @@ public class LinkedList {
             System.out.println(temp.getData());
             temp = temp.getNextNode();
         }
+                while (temp != null) {
+            System.out.println(temp.getData());
+            temp = temp.getNextNode();
+        }
     }
-}
+    
+    // Print all items backwards using recursion
+    public void printBackwards() {
+        if (items == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+
+        printBackwardsRecursive(items);
+    }
+
+    // Recursive helper method
+    private void printBackwardsRecursive(ListNode node) {
+        if (node == null) {
+            return;
+        }
+
+        printBackwardsRecursive(node.getNextNode());
+
+        System.out.println(node.getData());
+    }
+    
+    // Print all items forwards using recursion
+    public void printRecursively() {
+        if (items == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+
+        printForwardRecursive(items);
+    }
+
+    private void printForwardRecursive(ListNode node) {
+        if (node == null) {
+            return;
+        }
+
+        System.out.println(node.getData());
+        printForwardRecursive(node.getNextNode());
+    }
+
+
+ }
